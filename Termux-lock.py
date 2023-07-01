@@ -55,8 +55,7 @@ def check_usr_pass():
             print(red + '\n\t\t[×] Invalid username or password [×]',endc)
     else:
         print(red +'\n\tYou have removed your lock')
-def remove():
-    dash = '-'
+
 def exit():
     global flag
     print(blue +'\n\tThank you for Using...',endc)
