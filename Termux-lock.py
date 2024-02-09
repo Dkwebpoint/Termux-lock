@@ -1,9 +1,19 @@
-#!/usr/bin/env python3                                               Termux-Lock.py                                                    Modified
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import os,sys,time,signal
 import stdiomask as sm
-# coded by Mr.DKwebpoint
-
+# coded by Mr.Anonymous
+'''
+    Attention !
+    avant d'exécuter ce script vous devez créer une combinaison USER/PASS 
+    et enregistrer les dans un fichier de votre choix 
+    cd /data/data/com.termux/files/usr/share/
+    mkdir termux-user
+    cd termux-user
+    nano usr_pwd.txt et écrire vos identifiants comme ceci :
+    root (la première ligne correspond au utilisateur)
+    toor (la deuxième ligne correspond au password)
+'''
 flag = True
 endc = '\033[0m'
 black = '\033[30m'
@@ -26,22 +36,11 @@ def main_menu():
 
 def check_usr_pass():
     dash = '-'
-    global flag,usr,pw
+    global flag,usr,pwd
     print(blue +'\n'+ dash*15 +'Login'+ dash*15)
     username = input(yellow + '\n\t[+] Username : ')
     password = sm.getpass(prompt=yellow + '\n\t[*] Password : ',mask='*')
     print(blue +'\n'+ dash*13 +'Completed'+ dash*13)
-    '''
-    Attention !
-    avant d'exécuter ce script vous devez créer une combinaison USER/PASS 
-    et enregistrer les dans un fichier de votre choix 
-    cd /data/data/com.termux/files/usr/share/
-    mkdir termux-user
-    cd termux-user
-    nano usr_pwd.txt et écrire vos identifiants comme ceci :
-    root (la première ligne correspond au utilisateur)
-    toor (la deuxième ligne correspond au password)
-    '''
     usrpwd = open("/data/data/com.termux/files/usr/share/termux-user/usr_pwd.txt")
     lines = usrpwd.readlines()
     usrpwd.close()
@@ -49,20 +48,18 @@ def check_usr_pass():
         usr = lines[0]
         pwd = lines[1]
         if username+'\n' == usr and password+'\n' == pwd:
-            print(green + usr +'Connected Successfully ' ,endc)
-            flag = False
+            print(green + 'Bienvenue '+ yellow +usr +green+'Connected Successfully ' ,endc)
+
+            flag= False
         else:
             print(red + '\n\t\t[×] Invalid username or password [×]',endc)
     else:
         print(red +'\n\tYou have removed your lock')
-
 def exit():
     global flag
     print(blue +'\n\tThank you for Using...',endc)
-    time.sleep(0.25)
+    time.sleep(0.50)
     os.kill(os.getppid(), signal.SIGHUP)
-
-
 if __name__ == '__main__':
     while flag == True:
         try:
@@ -70,16 +67,15 @@ if __name__ == '__main__':
             menu = {1:check_usr_pass,2:exit}
             options = input(magneto +'\nEnter choice : ')
             if(options == '1'):
-                check_usr_pass()
-            else:
-                print ('')
+                try:
+                    check_usr_pass()
+                except ValueError:
+                    print(f"\n{red}quelque chose s est mal passée")
             if(options == '2'):
-                exit()
-            else:
-                print ('')
-            if (options) != 1 or (options) != 2:
-                print(red +'\t Choice not allowed...',endc)
-
+                try:
+                    exit()
+                except:
+                    print(f"\n{red}quelque chose s est mal passée")
         except KeyboardInterrupt:
             print(" Finishing up...Keyboard Interrup\r"),
             time.sleep(0.25)
