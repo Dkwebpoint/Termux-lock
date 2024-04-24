@@ -10,10 +10,17 @@ Attention !
    Ajouter cette ligne a la fin de fichier :
 /data/data/com.termux/files/usr/etc/[bash.bashrc](https://github.com/Dkwebpoint/Termux-lock/blob/2ed3fc87c5c4a234b060a26847bf1797d354d04f/bash.bashrc)
 
-`alias txl='python /data/data/com.termux/files/home/Termux-Lock/Termux-Lock.py -l'
+`alias txl='python /data/data/com.termux/files/usr/share/Termux-Lock/Termux-Lock.py -l'
 txl`
-   
-   
+
+# Créer un fichier python [Termux-lock.py](https://github.com/Dkwebpoint/Termux-lock/blob/1ba676f659edadcd577dbde63130bbd5ab162007/Termux-lock.py)
+`cd /data/data/com.termux/files/usr/share/Termux-Lock/`
+
+`nano Termux-Lock.py`
+
+`chmod +x Termux-Lock.py`
+
+`chmod +x /data/data/com.termux/files/usr/share/Termux-Lock/Termux-Lock.py`   
 
     avant d'exécuter ce script vous devriez créer une combinaison USER/PASS 
     et enregistrer les dans un fichier de votre choix 
