@@ -7,9 +7,11 @@ Attention !
 
 # Commencez par modifier notre bash.bashrc 
 
-   Ajouter cette ligne a la fin de fichier bash.bashrc:
-alias txl='python /data/data/com.termux/files/home/Termux-Lock/Termux-Lock.py -l'
-txl
+   Ajouter cette ligne a la fin de fichier :
+bash.bashrc [bash.bashrc](https://github.com/Dkwebpoint/Termux-lock/blob/2ed3fc87c5c4a234b060a26847bf1797d354d04f/bash.bashrc)
+
+`alias txl='python /data/data/com.termux/files/home/Termux-Lock/Termux-Lock.py -l'
+txl`
    
    
 
