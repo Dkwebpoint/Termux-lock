@@ -5,6 +5,14 @@ ce script à besoin d'être améliorer
 
 Attention !
 
+# Commencez par modifier notre bash.bashrc 
+
+   Ajouter cette ligne a la fin de fichier bash.bashrc:
+alias txl='python /data/data/com.termux/files/home/Termux-Lock/Termux-Lock.py -l'
+txl
+   
+   
+
     avant d'exécuter ce script vous devriez créer une combinaison USER/PASS 
     et enregistrer les dans un fichier de votre choix 
     
@@ -21,6 +29,7 @@ Attention !
     toor (la deuxième ligne == password)
 # Requirements 
 
+pip install stdiomask
 apt install figlet
 pip install lolcat
 
