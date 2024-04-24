@@ -20,18 +20,16 @@ txl`
 
 `chmod +x Termux-Lock.py`
 
-`chmod +x /data/data/com.termux/files/usr/share/Termux-Lock/Termux-Lock.py`   
-
-    avant d'exécuter ce script vous devriez créer une combinaison USER/PASS 
+avant d'exécuter ce script vous devriez créer une combinaison USER/PASS 
     et enregistrer les dans un fichier de votre choix 
     
-    cd /data/data/com.termux/files/usr/share/
+`cd /data/data/com.termux/files/usr/share/`
     
-    mkdir termux-user
+`mkdir termux-user`
     
-    cd termux-user
+`cd termux-user`
     
-    nano usr_pwd.txt
+`nano usr_pwd.txt`
 
     et écrire vos identifiants comme ceci :
     root (la première ligne == utilisateur)
